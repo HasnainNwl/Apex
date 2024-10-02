@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Loads</title>
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: "Neue Plak";
+      src: url("./fonts/NeuePlak-Regular.woff2") format("woff2"),
+        /* Adjust the path and format as needed */
+          url("./fonts/NeuePlak-Regular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      font-family: "Neue Plak", sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+      scrollbar-width: none; /* Hide scrollbar for Firefox */
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <!-- Header Section -->
+  <header class="py-4 px-8 bg-red-700 hidden text-white md:flex flex-col lg:flex-row gap-4 lg:gap-16">
+    <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center py-4">
+      <!-- Contact Information -->
+      <div class="flex space-x-4">
+        <div class="flex items-center">
+          <img src="assets/whatsapp.png" class="w-6 h-6">
+          <p class="ml-2">+254 (0) 709 677 400</p>
+        </div>
+        <div class="flex items-center">
+          <img src="assets/call.png" class="w-6 h-6">
+          <p class="ml-2">+254 (0) 709 677 400</p>
+        </div>
+        <div class="flex items-center">
+          <img src="assets/mail.png" class="w-6 h-6">
+          <p class="ml-2">info@apexloads.com</p>
+        </div>
+      </div>
+  
+      <!-- Navigation Links -->
+      <div class="flex space-x-4 mt-4 lg:mt-0">
+        <ul id="nav-links" class="hidden lg:flex space-x-8 text-[16px]">
+          <li class="relative group z-50">
+            <a href="#" class="hover:underline">Transporters</a>
+            <ul class="absolute bg-red-500 p-2 hidden group-hover:block w-32 h-auto">
+              <li><a href="#" class="hover:underline">Search Loads</a></li>
+              <li><a href="#" class="hover:underline">Post A Truck</a></li>
+              <li><a href="#" class="hover:underline">EAC Profile</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="#" class="hidden lg:block text-white rounded-full text-center hover:underline">About Us</a>
+        <a href="#" class="hidden lg:block text-white rounded-full text-center hover:underline">Resources</a>
+        <a href="#" class="hidden lg:block text-red-500 bg-white rounded-full text-center px-4 py-2">Login</a>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu Toggle -->
+    
+  </header>
+  
+  
+
+  <!-- Navigation Section -->
+  <nav class="bg-black text-white">
+    <div class="container mx-auto flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="assets/logo.png" alt="Apex Loads" class="h-16">
+        </div>
+
+        <!-- User Icon for Mobile (hidden on desktop) -->
+        <div class="lg:hidden flex items-center space-x-4">
+            <button class="focus:outline-none">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1119_352)">
+                    <path d="M12.0905 12.625V12.625C17.0442 12.6526 21.7018 15.9093 23.2949 21.0346M12.0905 12.625L22.1117 21.4395M12.0905 12.625H12.0877M12.0905 12.625H12.0877M23.2949 21.0346L22.8174 21.183L23.2948 21.0344C23.2948 21.0345 23.2949 21.0345 23.2949 21.0346ZM23.2949 21.0346C23.2979 21.0444 23.3025 21.0583 23.3081 21.0752C23.3287 21.1374 23.3626 21.2399 23.3818 21.326C23.4098 21.451 23.4337 21.6365 23.367 21.8377L22.8924 21.6802L23.3672 21.8371C23.3011 22.0369 23.1682 22.2097 22.9744 22.3116C22.7843 22.4115 22.5761 22.4219 22.3926 22.3752C22.027 22.2821 21.7515 21.9732 21.6336 21.586M21.6336 21.586C21.6337 21.5862 21.6338 21.5865 21.6338 21.5868L22.1117 21.4395M21.6336 21.586C21.6335 21.5856 21.6333 21.5851 21.6332 21.5847L22.1117 21.4395M21.6336 21.586C20.619 18.2952 18.0122 15.5018 14.643 14.6758M22.1117 21.4395C21.0536 18.0067 18.3275 15.0643 14.762 14.1902M14.643 14.6758L14.762 14.1902M14.643 14.6758C11.6136 13.9332 8.24849 14.5482 5.96067 16.5249C4.43742 17.841 3.29934 19.6495 2.76822 21.5578L2.75442 21.6074L2.7308 21.6532L2.28653 21.4237M14.643 14.6758C14.643 14.6758 14.643 14.6758 14.643 14.6758L14.762 14.1902M14.762 14.1902L2.28653 21.4237M2.28653 21.4237C2.7308 21.6532 2.73071 21.6533 2.73063 21.6535M2.28653 21.4237L2.73063 21.6535M12.0877 12.625C12.0038 12.625 11.9191 12.6254 11.8336 12.6265L11.8319 12.6266C7.0322 12.7082 3.14282 15.8611 1.47807 19.9501C1.44944 20.0204 1.41399 20.1019 1.3759 20.1894C1.28087 20.4078 1.16937 20.664 1.10607 20.8797C1.02313 21.1624 0.921264 21.6977 1.35952 22.054L1.35964 22.0541M12.0877 12.625L1.35964 22.0541M1.35964 22.0541C1.53806 22.199 1.75384 22.2711 1.9803 22.2413M1.35964 22.0541L1.9803 22.2413M1.9803 22.2413C2.18665 22.2142 2.34083 22.1102 2.43668 22.0272M1.9803 22.2413L2.43668 22.0272M2.43668 22.0272C2.53522 21.9418 2.60696 21.8484 2.65121 21.784M2.43668 22.0272L2.65121 21.784M2.65121 21.784C2.67438 21.7503 2.69266 21.7206 2.70574 21.6983M2.65121 21.784L2.70574 21.6983M2.70574 21.6983C2.71233 21.6871 2.71772 21.6774 2.72189 21.6698M2.70574 21.6983L2.72189 21.6698M2.72189 21.6698L2.72725 21.6599M2.72189 21.6698L2.72725 21.6599M2.72725 21.6599L2.72925 21.6561M2.72725 21.6599L2.72925 21.6561M2.72925 21.6561L2.73008 21.6545M2.72925 21.6561L2.73008 21.6545M2.73008 21.6545L2.73045 21.6538M2.73008 21.6545L2.73045 21.6538M2.73045 21.6538L2.73063 21.6535M2.73045 21.6538L2.73063 21.6535M12.0728 1.7502V1.75019L12.0697 1.75018C11.2753 1.74751 10.4855 1.9164 9.76526 2.25278L9.76523 2.25279C7.12609 3.48557 5.95488 6.92897 7.20656 9.48466L7.20656 9.48468C8.41792 11.9578 11.6221 13.1377 14.1283 12.077C16.3884 11.1205 17.7758 8.51066 17.3152 6.10871C16.8433 3.64735 14.5333 1.77361 12.0728 1.7502ZM10.6266 10.4653L10.6266 10.4653C9.09324 9.81641 8.14741 7.99298 8.4898 6.37203C8.8288 4.76736 10.3768 3.51677 12.0121 3.49999C12.0523 3.50001 12.0917 3.50035 12.1306 3.50116C14.2934 3.56407 15.9148 5.6602 15.6229 7.65523L15.6229 7.65525C15.4604 8.76639 14.7246 9.68428 13.7484 10.2197C12.7698 10.7565 11.6037 10.8789 10.6266 10.4653Z" fill="white" stroke="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1119_352">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </button>
+
+            <!-- Hamburger Icon (hidden on desktop) -->
+            <button id="hamburger" class="text-white focus:outline-none lg:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Nav Links (Desktop) -->
+        <ul id="nav-links" class="hidden lg:flex space-x-8 text-[16px]">
+            <li class="relative group z-50">
+                <a href="#" class="hover:text-red-500">Transporters</a>
+                <ul class="absolute bg-black p-2 hidden group-hover:block w-40">
+                    <li><a href="#" class="hover:text-red-500">Search Loads</a></li>
+                    <li><a href="#" class="hover:text-red-500">Post A Truck</a></li>
+                    <li><a href="#" class="hover:text-red-500">EAC Profile</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="hover:text-red-500">Full Service Broker</a></li>
+            <li><a href="#" class="hover:text-red-500">Freight Forwarders/Brokers</a></li>
+            <li><a href="#" class="text-red-500 bg-white px-8 py-2 rounded-full">Pricing</a></li>
+            <li><a href="#" class="text-white bg-red-500 px-8 py-2 rounded-full">Book A Free Demo</a></li>
+        </ul>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="lg:hidden hidden">
+        <ul class="bg-black p-4 space-y-2">
+            <li class="relative group">
+                <a href="#" class="hover:text-red-500">Transporters</a>
+                <ul class="absolute bg-black hidden group-hover:block w-full">
+                    <li><a href="#" class="hover:text-red-500">Search Loads</a></li>
+                    <li><a href="#" class="hover:text-red-500">Post A Truck</a></li>
+                    <li><a href="#" class="hover:text-red-500">EAC Profile</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="hover:text-red-500">Full Service Broker</a></li>
+            <li><a href="#" class="hover:text-red-500">Freight Forwarders/Brokers</a></li>
+        </ul>
+        <a href="#" class="text-white bg-red-500 px-4 py-2 rounded block text-center">Book A Free Demo</a>
+    </div>
+</nav>
+  <!-- Hero Section -->
+  <section class="relative z-0 py-10 md:py-0 md:h-screen bg-cover bg-center text-white" style="background-image: url('assets/herobg.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="container  h-full flex flex-col md:justify-center justify-start items-start md:items-center mx-10 text-center">
+      <h1 class="lg:text-[118px] text-5xl font-bold z-10 text-start ">RELIABLE <br><span>TRANSPORT</span></h1>
+      <p class="lg:text-[52px] text-[24px] font-medium mt-4 z-10 md:ml-48 text-start">SOLUTION FOR <br> YOUR FREIGHT</p>
+      <a href="#" class="mt-8 inline-block border-2 text-white py-2 px-6 rounded-full mt-4 flex gap-3 z-10 md:ml-48">Book Your Free Trial <img src="assets/arrow.png" alt=""></a>
+    </div>
+  </section>
+
+ <!-- navbar end section  -->
+
+ <section class="mx-auto px-4 py-8 bg-black text-white bg-[url('assets/bg-about.png')] h-auto lg:h-[60rem]">
+    <div class="flex flex-col-reverse lg:flex-row items-center lg:items-start lg:space-x-8 m-4 md:m-16 lg:m-28">
+        <!-- Text Section -->
+        <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+            <h1 class="text-[36px] md:text-[48px] lg:text-[72px] font-bold mb-4">About <span class="text-red-600">us</span></h1>
+            <p class="text-base md:text-lg lg:text-xl mb-4">
+                <span class="text-red-500 text-[24px] md:text-[28px] font-bold">Apexloads.com</span> 
+                <span class="text-[24px] md:text-[28px] font-bold">is a premier digital platform designed to revolutionize the logistics and transportation industry,</span> 
+                with a special focus on the African market. We aim to bridge the gap between shippers and truck owners, providing a seamless and efficient solution to manage freight loads. Our platform is built on the principles of innovation, reliability, and accessibility, ensuring that all users, regardless of their location, can optimize their logistics operations and drive their businesses forward.
+            </p>
+            <a href="#" class="inline-block border-2 text-white py-2 px-6 rounded-full mt-4">Know more</a>
+        </div>
+
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 relative left-[40%] md:left-[25%]">
+            <img src="assets/about.png" alt="Truck Image" class="w-full h-auto object-cover z-50">
+            <!-- Line Image, hidden on mobile and tablet, only shows on large screens -->
+            <img src="assets/line.png" alt="" class="  hidden lg:block flex lg:relative lg:top-[-500px] lg:left-[43%] -z-1">
+        </div>
+    </div>
+</section>
+ <!-- about section end  -->
+
+ <section class="mx-auto px-4 py-8 bg-black text-white">
+    <div class="container flex flex-col lg:flex-row items-center lg:space-x-8">
+        <!-- Image Section -->
+        <div class="w-full  lg:w-1/2 mb-8 lg:mb-0 flex justify-center">
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <img src="assets/choose-us.png" alt="Truck Driver" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Text Section -->
+        <div class="w-full lg:w-1/2 space-y-8 ml-4">
+            <h1 class="text-[36px] md:text-[48px] lg:text-[72px] font-bold">
+                Why Choose <span class="text-red-600">Us</span>
+            </h1>
+
+            <!-- Proven Track Record of Excellence Section -->
+            <div class="bg-red-600 text-white p-6 rounded-lg shadow-lg relative ">
+                
+                <h2 class="text-lg lg:text-2xl font-bold">Proven Track Record of Excellence</h2>
+                <p class="text-xl lg:text-lg mt-4">
+                    At Apex Loads, we pride ourselves on our proven track record of excellence in the logistics industry. With years of experience and a deep understanding of Africa’s unique logistical challenges, we have established ourselves as a trusted partner for businesses across the continent.
+                </p>
+            </div>
+
+            <!-- Comprehensive Solutions Section -->
+            <div class="bg-red-600 text-white p-6 rounded-lg shadow-lg relative">
+                
+                <h2 class="text-lg lg:text-[24px] font-bold">Comprehensive Solutions Tailored to Your Needs</h2>
+                <p class="text-base lg:text-lg mt-4">
+                    We offer comprehensive logistics solutions tailored to meet the specific needs of cargo owners, brokers, and shippers. Whether you are looking to optimize your supply chain, streamline operations, or enhance visibility and control, Apex Loads has the expertise and technology to deliver results.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="max-w-7xl mx-auto p-6">
+    <!-- Heading and Button -->
+    <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+      <h1
+        class="md:text-5xl text-4xl font-bold text-center md:text-left mb-4 md:mb-0"
+      >
+        Services We <span class="text-red-600">Offer</span>
+      </h1>
+      <button
+        class="bg-[#D91E27] text-white font-bold py-2 px-6 rounded-full"
+      >
+        Book A Free Demo
+      </button>
+    </div>
+
+    <!-- Service Cards -->
+    <div class="flex flex-col md:flex-row md:justify-between md:gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white text-black overflow-hidden mb-6 md:mb-0 flex-1">
+        <img
+          class="w-full h-48 object-cover"
+          src="assets/1.png"
+          alt="Freight Forwarders"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Freight Forwarders/Brokers:</h2>
+          <p class="mb-4">
+            At Apex Loads, we understand the critical role of freight
+            forwarders and brokers in global logistics.
+          </p>
+          <button
+            class="bg-[#D91E27] text-white font-bold py-2 px-4 rounded-full"
+          >
+            Know more
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white text-black overflow-hidden mb-6 md:mb-0 flex-1">
+        <img
+          class="w-full h-48 object-cover"
+          src="assets/2.png"
+          alt="Transporters"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Transporters:</h2>
+          <p class="mb-4">
+            Join the Apex Loads network and gain access to a wide range of
+            benefits designed to support your transportation business.
+          </p>
+          <button
+            class="bg-[#D91E27] text-white font-bold py-2 px-4 rounded-full"
+          >
+            Know more
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white text-black overflow-hidden flex-1">
+        <img
+          class="w-full h-48 object-cover"
+          src="assets/3.png"
+          alt="Full-Service Brokers"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Full-Service Brokers:</h2>
+          <p class="mb-4">
+            Apex Loads provides full-service brokerage solutions to enhance
+            your business capabilities. Benefit from:
+          </p>
+          <button
+            class="bg-[#D91E27] text-white font-bold py-2 px-4 rounded-full"
+          >
+            Know more
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div
+    class="text-center md:mt-12 my-6 pt-20 md:pt-24 bg-[#D91E27] md:h-[50rem] h-[22rem]"
+  >
+    <h2 class="lg:text-7xl md:text-6xl text-3xl font-bold text-white mb-4">
+      Lorem ipsum dolor sit amet consectetur.
+    </h2>
+    <p
+      class="text-lg text-white text-center md:text-justify md:w-[70%] w-[90%] mx-auto"
+    >
+      At Apex Loads, we pride ourselves on our proven track record of
+      excellence in the logistics industry.
+      <span class="hidden md:inline-block">
+        With years of experience and a deep understanding of Africa's unique
+        logistical challenges, we have established ourselves as a trusted
+        partner for businesses across the continent.</span
+      >
+    </p>
+    <div class="flex justify-center mt-4">
+      <div class="relative md:w-[68%] w-[90%]">
+        <img src="assets/4.png" alt="Video" class="w-full rounded-lg" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <button class="text-white rounded-full p-4">
+            <svg
+              width="81"
+              height="81"
+              viewBox="0 0 81 81"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="40.5" cy="40.5" r="40.5" fill="white" />
+              <path
+                d="M55 40L32.5 52.9904L32.5 27.0096L55 40Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center md:gap-56 my-10 gap-5 md:w-[60%] w-[90%] mx-auto text-center"
+    >
+      <!-- Stat 1 -->
+      <div class="flex flex-col items-center w-[30%]">
+        <p
+          class="lg:text-6xl md:text-5xl sm:text-4xl text-2xl text-center font-bold"
+        >
+          4500+
+        </p>
+        <p class="text-[14px] text-center">Users Signup</p>
+      </div>
+      <!-- Stat 2 -->
+      <div class="flex flex-col items-center w-[30%]">
+        <p
+          class="lg:text-7xl md:text-6xl sm:text-5xl text-2xl text-center font-bold"
+        >
+          9988
+        </p>
+        <p class="text-[14px] ">Leads Posted and Covered</p>
+      </div>
+      <!-- Stat 3 -->
+      <div class="flex flex-col items-center w-[30%]">
+        <p
+          class="lg:text-6xl md:text-5xl sm:text-4xl text-2xl text-center font-bold"
+        >
+          500+
+        </p>
+        <p class="text-[14px] text-center">Trucks Posted</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto py-12 mt-56 px-6">
+    <!-- Heading -->
+    <div class="text-center mb-12 py-10">
+      <h2 class="md:text-7xl text-5xl font-bold">
+        What people <span class="text-red-600">say</span>
+      </h2>
+    </div>
+    <div class="relative">
+      <!-- Left Scroll Button -->
+      <button
+        id="scrollLeft"
+        class="absolute md:hidden block left-0 z-10 bg-black/50 hover:bg-black/70 p-2 rounded-full top-1/2 transform -translate-y-1/2"
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="16"
+            cy="16"
+            r="15.5"
+            transform="rotate(-180 16 16)"
+            fill="#1B1B1B"
+            stroke="white"
+          />
+          <path d="M19 21L14 16L19 11" stroke="white" />
+        </svg>
+      </button>
+
+      <!-- Cards Container -->
+      <div
+        id="slider"
+        class="flex justify-start items-center gap-8 overflow-x-scroll scroll-smooth md:flex-row no-scrollbar px-12"
+      >
+        <!-- Card 1 Content -->
+        <div
+        class="bg-[#1B1B1B] p-6 md:w-[30%] w-[100%] rounded-sm min-w-[350px] md:min-w-[30%]"
+      >
+        <div class="flex items-center gap-6">
+          <img
+            src="assets/5.png"
+            alt="User Image"
+            class="w-28 h-28 mb-4 rounded-full"
+          />
+          <div class="relative pb-10">
+            <h3 class="text-xl font-semibold">Moses Smith</h3>
+            <p class="">Transporter</p>
+            <img
+              src="assets/6.png"
+              class="w-20 absolute -bottom-2"
+              alt=""
+            />
+          </div>
+        </div>
+        <p class="mt-2 text-sm text-justify">
+            I did not have to leave the house to find a load. It was so easy; I was watching the news while searching for my next load. Got the information, called the broker, got there and just loaded it up. This would otherwise have been a 5 hour wait or even much longer 
+        </p>
+      </div>
+        <div
+          class="bg-[#1B1B1B] p-6 md:w-[30%] w-[100%] rounded-sm min-w-[350px] md:min-w-[30%]"
+        >
+          <div class="flex items-center gap-6">
+            <img
+              src="assets/man-2.png"
+              alt="User Image"
+              class="w-28 h-28 mb-4 rounded-full"
+            />
+            <div class="relative pb-10">
+              <h3 class="text-xl font-semibold">Lora Kisa</h3>
+              <p class="">Broker</p>
+              <img
+                src="assets/6.png"
+                class="w-20 absolute -bottom-2"
+                alt=""
+              />
+            </div>
+          </div>
+          <p class="mt-2 text-sm text-justify">
+            I save so much time, because I do not have to call the driver to find out where he/she is. I can track them on my mobile. Sometimes I feel like I am James Bond. The app itself has been very valuable to our business and helps to keep us very busy! Thank You!
+          </p>
+        </div>
+        <div
+          class="bg-[#1B1B1B] p-6 md:w-[30%] w-[100%] rounded-sm min-w-[350px] md:min-w-[30%]"
+        >
+          <div class="flex items-center gap-6">
+            <img
+              src="assets/man-3.png"
+              alt="User Image"
+              class="w-28 h-28 mb-4 rounded-full"
+            />
+            <div class="relative pb-10">
+              <h3 class="text-xl font-semibold">Faith Mukasa</h3>
+              <p class="">Shipper</p>
+              <img
+                src="assets/6.png"
+                class="w-20 absolute -bottom-2"
+                alt=""
+              />
+            </div>
+          </div>
+          <p class="mt-2 text-sm text-justify">
+            ApexLoads has transformed my business by cutting wait times by 38%, boosting customer satisfaction, and fostering daily network growth. Its unparalleled efficiency solidifies ApexLoads as the top-of-the-line solution driving my success.
+          </p>
+        </div>
+
+        <!-- Add more cards as needed by copying the card structure above -->
+      </div>
+
+      <!-- Right Scroll Button -->
+      <button
+        id="scrollRight"
+        class="absolute md:hidden block right-0 z-10 bg-black/50 hover:bg-black/70 p-2 rounded-full top-1/2 transform -translate-y-1/2"
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="15.5" fill="#1B1B1B" stroke="white" />
+          <path d="M13 11L18 16L13 21" stroke="white" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Member Of Section -->
+  <section class="bg-black py-12">
+    <div class="text-center mb-8">
+      <h3 class="md:text-7xl text-5xl font-bold">Member Of</h3>
+    </div>
+    <div class="flex justify-center items-center space-x-8 flex-wrap">
+      <img
+        src="assets/logo-1.png"
+        alt="Logo 1"
+        class="w-40 h-40 object-contain"
+      />
+      <img
+        src="assets/logo-2.png"
+        alt="Logo 2"
+        class="w-40 h-40 object-contain"
+      />
+      <img
+        src="assets/logo-3.png"
+        alt="Logo 3"
+        class="w-40 h-40 object-contain"
+      />
+      <img
+        src="assets/logo-4.png"
+        alt="Logo 4"
+        class="w-40 h-40 object-contain"
+      />
+    </div>
+  </section>
+
+  <!-- Bottom section 2 -->
+  <div
+    class="text-center md:h-[751px] h-[20rem] md:pt-20 pt-3"
+    style="
+      background-image: url('assets/7.png');
+      background-size: 100% 100%;
+    "
+  >
+    <!-- Heading -->
+    <h1 class="text-white md:text-7xl text-3xl font-bold mb-6">
+      Download the Apexloads mobile app
+    </h1>
+
+    <!-- Screens and Buttons -->
+    <div
+      class="flex md:justify-between md:items-center items-end md:h-[80%] h-[66%] md:mx-20 justify-center space-x-4 mb-6"
+    >
+      <!-- App Store Button -->
+      <div
+        class="bg-black flex md:w-[25%] md:h-20 h-10 gap-4 p-2 border-[1px] rounded-lg border-white items-center"
+      >
+        <a href="#">
+          <img
+            src="assets/8.png"
+            class="md:h-20 h-10 w-[100%]"
+            alt="App Store"
+          />
+        </a>
+      </div>
+
+      <!-- Google Play Button -->
+      <div
+        class="bg-black flex md:w-[25%] md:h-20 h-10 gap-4 p-2 border-[1px] rounded-lg border-white items-center"
+      >
+        <a href="#">
+          <svg
+            class="md:w-[52px] w-[20px] md:h-[58px] h-[40px]"
+            width="52"
+            height="58"
+            viewBox="0 0 52 58"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.03412 1.61133C0.369674 2.27577 0.148193 3.38318 0.148193 4.71207V53.6595C0.148193 54.9884 0.591156 56.0958 1.2556 56.7602L1.47708 56.9817L28.9408 29.518V29.075L1.03412 1.61133Z"
+              fill="url(#paint0_linear_953_101)"
+            />
+            <path
+              d="M37.8 38.8206L28.7192 29.7398V29.0754L37.8 19.9946L38.0215 20.2161L48.8741 26.4176C51.9748 28.1894 51.9748 31.0687 48.8741 32.8406L37.8 38.8206Z"
+              fill="url(#paint1_linear_953_101)"
+            />
+            <path
+              d="M38.0216 38.5991L28.7194 29.2969L1.03418 56.9821C2.14159 58.0895 3.69196 58.0895 5.68529 57.2035L38.0216 38.5991Z"
+              fill="url(#paint2_linear_953_101)"
+            />
+            <path
+              d="M38.0216 19.9943L5.68529 1.61137C3.69196 0.503959 2.14159 0.725441 1.03418 1.83285L28.7194 29.2966L38.0216 19.9943Z"
+              fill="url(#paint3_linear_953_101)"
+            />
+            <path
+              opacity="0.2"
+              d="M37.8001 38.3774L5.68529 56.5389C3.91344 57.6463 2.36307 57.4248 1.25566 56.5389L1.03418 56.7604L1.25566 56.9819C2.36307 57.8678 3.91344 58.0893 5.68529 56.9819L37.8001 38.3774Z"
+              fill="black"
+            />
+            <path
+              opacity="0.12"
+              d="M1.03412 56.5391C0.369674 55.8747 0.148193 54.7672 0.148193 53.4384V53.6598C0.148193 54.9887 0.591156 56.0961 1.2556 56.7606V56.5391H1.03412ZM48.8741 32.1761L37.8 38.3776L38.0215 38.5991L48.8741 32.3976C50.4245 31.5117 51.0889 30.4043 51.0889 29.2969C51.0889 30.4043 50.203 31.2902 48.8741 32.1761Z"
+              fill="black"
+            />
+            <path
+              opacity="0.25"
+              d="M5.68523 1.83297L48.8741 26.4174C50.203 27.3033 51.0889 28.1893 51.0889 29.2967C51.0889 28.1893 50.4245 27.0819 48.8741 26.1959L5.68523 1.61149C2.58449 -0.160366 0.148193 1.16852 0.148193 4.71223V4.93371C0.148193 1.61149 2.58449 0.0611152 5.68523 1.83297Z"
+              fill="white"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_953_101"
+                x1="26.283"
+                y1="4.29125"
+                x2="-10.8882"
+                y2="41.4603"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#00A0FF" />
+                <stop offset="0.007" stop-color="#00A1FF" />
+                <stop offset="0.26" stop-color="#00BEFF" />
+                <stop offset="0.512" stop-color="#00D2FF" />
+                <stop offset="0.76" stop-color="#00DFFF" />
+                <stop offset="1" stop-color="#00E3FF" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_953_101"
+                x1="52.936"
+                y1="29.2991"
+                x2="-0.655851"
+                y2="29.2991"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#FFE000" />
+                <stop offset="0.409" stop-color="#FFBD00" />
+                <stop offset="0.775" stop-color="#FFA500" />
+                <stop offset="1" stop-color="#FF9C00" />
+              </linearGradient>
+              <linearGradient
+                id="paint2_linear_953_101"
+                x1="32.9873"
+                y1="34.3821"
+                x2="-17.4174"
+                y2="84.7868"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#FF3A44" />
+                <stop offset="1" stop-color="#C31162" />
+              </linearGradient>
+              <linearGradient
+                id="paint3_linear_953_101"
+                x1="-5.83839"
+                y1="-14.6099"
+                x2="16.6708"
+                y2="7.89923"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#32A071" />
+                <stop offset="0.069" stop-color="#2DA771" />
+                <stop offset="0.476" stop-color="#15CF74" />
+                <stop offset="0.801" stop-color="#06E775" />
+                <stop offset="1" stop-color="#00F076" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+
+        <div class="font-bold">
+          <a href="#">
+            <h1 class="text-start text-[10px] md:text-lg">GET IT ON</h1>
+            <h1 class="md:text-2xl text-[12px]">GOOGLE PLAY</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer
+    class="bg-black md:h-[400px] h-auto p-10 md:p-20 flex flex-col md:flex-row justify-between space-y-10 md:space-y-0"
+  >
+    <!-- Left Side -->
+    <div class="flex flex-col md:w-[40%] w-[90%] space-y-6">
+      <div class="text-gray-400">
+        <div>
+          <img src="assets/logo.png" alt="Apexloads Logo" class="h-10" />
+          <p class="text-gray-400 my-4">
+            The first free end-to-end analytics service for the site, designed
+            to work with enterprises of various levels and business segments.
+          </p>
+        </div>
+        <h3 class="text-white font-bold my-4">
+          Seeking personalized support?
+        </h3>
+        <p class="my-4">Request a call from our team</p>
+        <!-- Input Fields -->
+        <div class="flex flex-col space-y-3 mt-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="bg-transparent border border-gray-600 p-2 rounded-lg text-white placeholder-gray-500 rounded-md"
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            class="bg-transparent border border-gray-600 p-2 rounded-lg text-white placeholder-gray-500 rounded-md"
+          />
+          <button class="bg-red-500  p-2 rounded-full font-bold ">
+            Send a request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-[50%]">
+      <div class="flex mb-10 gap-10 md:flex-row justify-between mb-2">
+        <div>
+          <h4 class="text-red-500 font-bold mb-4">Useful Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white">Contact Us</a></li>
+            <li><a href="#" class="hover:text-white">Newsletter</a></li>
+            <li><a href="#" class="hover:text-white">Pricing</a></li>
+            <li><a href="#" class="hover:text-white">Our Blog</a></li>
+            <li><a href="#" class="hover:text-white">FAQs & EAC</a></li>
+            <li><a href="#" class="hover:text-white">Profile</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-red-500 font-bold mb-4">Services</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li class="font-bold text-white">Transporters</li>
+            <li><a href="#" class="hover:text-white">Post Trucks</a></li>
+            <li><a href="#" class="hover:text-white">Search For Loads</a></li>
+            <li class="font-bold text-white">Brokers / Freight-Forwarders</li>
+            <li><a href="#" class="hover:text-white">Post Trucks</a></li>
+            <li><a href="#" class="hover:text-white">Search For Loads</a></li>
+            <div class="block md:hidden">
+              <li class="font-bold text-white">Shippers</li>
+              <li><a href="#" class="hover:text-white">Post Trucks</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Search For Loads</a>
+              </li>
+              <li class="font-bold text-white">Full-Service Brokers</li>
+              <li>
+                <a href="#" class="hover:text-white">Post Trucks / Loads</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white">Search Trucks / Loads</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div class="hidden md:inline-block">
+          <ul class="space-y-2 text-gray-400">
+            <li class="font-bold text-white">Shippers</li>
+            <li><a href="#" class="hover:text-white">Post Trucks</a></li>
+            <li><a href="#" class="hover:text-white">Search For Loads</a></li>
+            <li class="font-bold text-white">Full-Service Brokers</li>
+            <li>
+              <a href="#" class="hover:text-white">Post Trucks / Loads</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white">Search Trucks / Loads</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="flex flex-row justify-between gap-10 items-center">
+        <div>
+          <h4 class="text-[#72716D] font-bold mb-4">Contact Us</h4>
+          <p class="text-gray-400">+254 (0) 709 677 400</p>
+          <p class="text-gray-400">info@apexloads.com</p>
+          <a href="#" class="text-[#72716D] pt-1">Call me back</a>
+        </div>
+        <div class="flex-col flex">
+          <p class="text-gray-400 mt-4">
+            2972 Westheimer Rd. Santa Ana,<br />
+            Illinois 85486
+          </p>
+        </div>
+      </div>
+      <!-- Bottom Section -->
+      <div class="bg-black py-6 text-gray-400">
+        <div class="space-y-2 mb-10">
+          <p>Follow us</p>
+          <div class="flex justify-start space-x-4">
+            <a href="#" class="hover:text-white">Telegram</a>
+            <a href="#" class="hover:text-white">Whatsapp</a>
+            <a href="#" class="hover:text-white">Instagram</a>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <p>&copy; 2024 — COPYRIGHT PRIVACY</p>
+          <p>All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed bottom-2 right-10">
+      <a
+        href="#"
+        id="scrollTopBtn"
+        class="flex justify-center items-center w-14 h-14  rounded-full text-white transition-opacity hover:opacity-80"
+      >
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 146 146"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="73" cy="73" r="72" stroke="#272725" stroke-width="2" />
+          <path
+            d="M73 43.5L47 69.5L50.5 73L70.5 53V102H75.5V53L95.5 73L99 69.5L73 43.5Z"
+            fill="#D9D9D9"
+          />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+
+
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+   // JavaScript to control the scroll
+   const slider = document.getElementById("slider");
+      const scrollLeftButton = document.getElementById("scrollLeft");
+      const scrollRightButton = document.getElementById("scrollRight");
+
+      // Scroll left
+      scrollLeftButton.addEventListener("click", () => {
+        slider.scrollBy({
+          left: -300, // adjust the scroll value as needed
+          behavior: "smooth",
+        });
+      });
+
+      // Scroll right
+      scrollRightButton.addEventListener("click", () => {
+        slider.scrollBy({
+          left: 300, // adjust the scroll value as needed
+          behavior: "smooth",
+        });
+      });
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      scrollTopBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default anchor click behavior
+        window.scrollTo({
+          top: 0, // Scroll to top
+          behavior: "smooth", // Smooth scroll effect
+        });
+      });
+      
+</script>
+</body>
+</html>
